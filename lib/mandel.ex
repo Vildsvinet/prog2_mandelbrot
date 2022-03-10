@@ -12,7 +12,8 @@ defmodule Mandel do
   #  def rows(, _,_,_,_), do: rws
   def rows(_, -1, _, _), do: []
   def rows(w, h, trans, depth) do
-    [Enum.reverse(row(w, h, trans, depth)) | rows(w, h - 1, trans, depth)]
+    [Enum.reverse(row(w, h, trans, depth)) |
+     rows(w, h - 1, trans, depth)]
   end
 
   def row(-1, _, _, _), do: []

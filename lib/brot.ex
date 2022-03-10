@@ -8,13 +8,11 @@ defmodule Brot do
   end
 
   def test(it, z, c, depth) do
-#    {ac, bc} = c
-#    {az, bz} = Cmplx.square(z)
     cond do
       it == depth -> 0
       Cmplx.abs(z) > 2 -> it
-#      true -> test(it+1, {ac+az, bc+bz}, c, depth)
-      true -> test(it+1, Cmplx.add(Cmplx.square(z), c), c, depth)
+      true ->
+        test(it+1, Cmplx.add(Cmplx.square(z), c), c, depth)
     end
   end
 

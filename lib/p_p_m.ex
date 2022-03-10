@@ -29,16 +29,17 @@ defmodule PPM do
   end
 
   def demo() do
-    small(-2.3, 1.11, 0.7)
+    small(-2.5, 1.124, 1.5)
   end
   def small(x0, y0, xn) do
-    width = 800
-    height = 600
+    width = 1920
+    height = 1080
     depth = 69
 #    k = (xn - x0) / width = 3.8/960
     image = Mandel.mandelbrot(width, height, x0, y0, (xn - x0) / width, depth)
-    PPM.write("small.ppm", image)
+    PPM.write("inv.ppm", image)
   end
 
 
 end
+
